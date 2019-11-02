@@ -1,0 +1,25 @@
+<!doctype html>
+
+<head>
+    <title>Logging in...</title>
+
+    <script src="https://unpkg.com/@shopify/app-bridge@1.10.1/umd/index.js"></script>
+    <script>
+        var AppBridge = window['app-bridge'];
+        var Redirect = AppBridge.actions.Redirect;
+        const permissionUrl =
+            "/oauth/authorize?client_id={{ api_key }}&scope={{ scopes }}&redirect_uri={{ redirect_uri }}";
+
+        if (window.top == window.self) {
+            window.location.assign("https://{{ shop }}/admin" + permissionUrl);
+
+        } else {
+            const app = AppBridge.createApp({
+                apiKey: "{{ api_key }}",
+                shopOrigin: "{{ shop }}"
+            });
+
+            Redirect.create(app).dispatch(Redirect.Action.ADMIN_PATH, permissionUrl);
+        }
+    </script>
+</head>

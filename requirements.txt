@@ -1,0 +1,3 @@
+Flask >= 1.1.1
+ShopifyAPI >= 5.1.2
+python-dotenv >= 0.10.3
