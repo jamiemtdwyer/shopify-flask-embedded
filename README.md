@@ -13,3 +13,5 @@ This is an example Shopify application written in Python with Flask which authen
 7. Navigate to the application in your browser, supplying the domain of your Shopify store as the `shop` query parameter (`https://22638980.ngrok.io/?shop=my-shop.myshopify.com`)
 
 NOTE: This app assumes that it is running over HTTPS - the easiest way to achieve this is by using a tunneling service like [ngrok](https://ngrok.com)
+
+Make sure to enable third-party cookies in your browser! Some browsers such as Safari and Chromium block third-party cookies by default.
